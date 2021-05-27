@@ -42,7 +42,7 @@ module.exports = (() => {
                 twitter_username: ''
              }
           ],
-          version: '1.0.1',
+          version: '1.0.2',
           description: 'Roast People.\nPlease go over Commands API to change prefix if u wish to',
           github: 'https://github.com/wolfkid200444',
           github_raw: 'https://raw.githubusercontent.com/wolfkid200444/Plugins/master/Roast/Roast.plugin.js'
@@ -102,7 +102,7 @@ module.exports = (() => {
                     console.log(args)
                     return {
                        send: true,
-                       result: roasts[Math.floor(Math.random() * roasts.length)]
+                       result: `${args}` + roasts[Math.floor(Math.random() * roasts.length)]
                     }                 
                 }
              });
