@@ -42,11 +42,16 @@ module.exports = (() => {
                 twitter_username: ''
              }
           ],
-          version: '1.0.2',
+          version: '1.0.3',
           description: 'Roast People.\nPlease go over Commands API to change prefix if u wish to',
           github: 'https://github.com/wolfkid200444',
           github_raw: 'https://raw.githubusercontent.com/wolfkid200444/Plugins/master/Roast/Roast.plugin.js'
-       }
+          
+       },
+       "changelog": [
+         {"title": "New Plugin","items": ["Currently in the testing"]}
+     ],
+       
     };
  
     const buildPlugin = ([Plugin, API]) => {
@@ -58,8 +63,8 @@ module.exports = (() => {
           async start() {
              commands.register({
                 command: 'roast',
-                description: 'Roast peopke...',
-                usage: '{c} [text to clap on]',
+                description: 'Roast people...',
+                usage: '{c} [user]',
                 executor(args) {
                     const roasts = [
                         'My phone battery lasts longer than your relationships.',
@@ -102,7 +107,7 @@ module.exports = (() => {
                     console.log(args)
                     return {
                        send: true,
-                       result: `${args}` + roasts[Math.floor(Math.random() * roasts.length)]
+                       result: `${args}, ` + roasts[Math.floor(Math.random() * roasts.length)]
                     }                 
                 }
              });
