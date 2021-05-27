@@ -56,6 +56,7 @@ module.exports = (() => {
           }
  
           async start() {
+              console.log(commands)
              commands.register({
                 command: 'clap',
                 description: 'Clap your nessages...',
