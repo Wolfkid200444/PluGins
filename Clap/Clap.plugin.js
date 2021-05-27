@@ -42,8 +42,8 @@ module.exports = (() => {
                 twitter_username: ''
              }
           ],
-          version: '1.0.1',
-          description: 'Clapify Your messages.',
+          version: '1.0.2',
+          description: 'Clapify Your messages.\nPlease go over Commands API to change prefix if u wish to',
           github: 'https://github.com/wolfkid200444',
           github_raw: 'https://raw.githubusercontent.com/wolfkid200444/Plugins/master/Clap/Clap.plugin.js'
        }
