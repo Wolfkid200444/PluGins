@@ -42,7 +42,7 @@ module.exports = (() => {
                 twitter_username: ''
              }
           ],
-          version: '1.0.2',
+          version: '1.0.0',
           description: 'Emojify Your messages.\nPlease go over Commands API to change prefix if u wish to',
           github: 'https://github.com/wolfkid200444',
           github_raw: 'https://raw.githubusercontent.com/wolfkid200444/Plugins/master/Emojify/Emojify.plugin.js'
