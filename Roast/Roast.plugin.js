@@ -1,8 +1,8 @@
 /**
- * @name Clap
- * @source https://github.com/wolfkid200444/Plugins/blob/master/Clap/Clap.plugin.js
- * @updateUrl https://raw.githubusercontent.com/wolfkid200444/Plugins/master/Clap/Clap.plugin.js
- * @website https://github.com/wolfkid200444/Plugins/tree/master/Clap/Clap.plugin.js
+ * @name Roast
+ * @source https://github.com/wolfkid200444/Plugins/blob/master/Roast/Roast.plugin.js
+ * @updateUrl https://raw.githubusercontent.com/wolfkid200444/Plugins/master/Roast/Roast.plugin.js
+ * @website https://github.com/wolfkid200444/Plugins/tree/master/Roast/Roast.plugin.js
  * @authorId 282978672711827456
  */
 
@@ -33,7 +33,7 @@ module.exports = (() => {
     const config = {
        main: 'index.js',
        info: {
-          name: 'Clap',
+          name: 'Roast',
           authors: [
              {
                 name: 'wolfie',
@@ -42,35 +42,33 @@ module.exports = (() => {
                 twitter_username: ''
              }
           ],
-          version: '1.0.2',
-          description: 'Clapify Your messages.\nPlease go over Commands API to change prefix if u wish to',
+          version: '1.0.0',
+          description: 'Roast People.\nPlease go over Commands API to change prefix if u wish to',
           github: 'https://github.com/wolfkid200444',
-          github_raw: 'https://raw.githubusercontent.com/wolfkid200444/Plugins/master/Clap/Clap.plugin.js'
+          github_raw: 'https://raw.githubusercontent.com/wolfkid200444/Plugins/master/Roast/Roast.plugin.js'
        }
     };
  
     const buildPlugin = ([Plugin, API]) => {
-       return class Clap extends Plugin {
+       return class Roast extends Plugin {
           constructor() {
              super();
           }
  
           async start() {
              commands.register({
-                command: 'clap',
-                description: 'Clap your nessages...',
+                command: 'eoast',
+                description: 'Roast peopke...',
                 usage: '{c} [text to clap on]',
-                executor: (args) => ({
-                   send: true,
-                   result: args.join(' ').toLowerCase().split('').map(L => {
-                    return `${L}`;
-                }).join(' 👏 ')
-                })
+                executor(args) {
+                    let result
+                    console.log(args)                   
+                }
              });
           };
  
           stop() {
-             commands.unregister('clap');
+             commands.unregister('eoast');
           };
        };
     };

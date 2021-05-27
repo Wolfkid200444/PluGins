@@ -74,7 +74,6 @@ module.exports = (() => {
           }
  
           async start() {
-              console.log(commands)
              commands.register({
                 command: 'emojify',
                 description: 'Emojify your nessages...',
