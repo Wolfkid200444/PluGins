@@ -42,11 +42,14 @@ module.exports = (() => {
                 twitter_username: ''
              }
           ],
-          version: '1.0.2',
+          version: '1.0.3',
           description: 'Clapify Your messages.\nPlease go over Commands API to change prefix if u wish to',
           github: 'https://github.com/wolfkid200444',
           github_raw: 'https://raw.githubusercontent.com/wolfkid200444/Plugins/master/Clap/Clap.plugin.js'
-       }
+       },
+       "changelog": [
+        {"title": "New Plugin","items": ["Currently in the testing"]}
+    ],
     };
  
     const buildPlugin = ([Plugin, API]) => {
@@ -60,13 +63,26 @@ module.exports = (() => {
                 command: 'clap',
                 description: 'Clap your nessages...',
                 usage: '{c} [text to clap on]',
-                executor: (args) => ({
-                   send: true,
-                   result: args.join(' ').toLowerCase().split('').map(L => {
-                    return `${L}`;
-                }).join(' 👏 ')
-                })
-             });
+                executor(args){
+                    let text;
+
+                    if(args.length <= 1) {
+                        text = args.join(' ').toLowerCase().split('').map(L => {
+                            return `${L}`;
+                        }).join(' 👏 ');
+                    }
+                    else {
+                        text = args.join(' ').toLowerCase().split(' ').map(L => {
+                            return `${L}`;
+                        }).join(' 👏 ');
+                }
+                let result;
+                return {
+                    send: true,
+                    result: text
+                }
+            }
+            });
           };
  
           stop() {
